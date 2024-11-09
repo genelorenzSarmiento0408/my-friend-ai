@@ -10,7 +10,11 @@ function About() {
       id="about"
     >
       <div className="lg:w-3/5">
-        <Image alt="about image" src={About_image} className="rounded-r-2xl" />
+        <Image
+          alt="about image"
+          src={About_image}
+          className="lg:rounded-r-2xl"
+        />
       </div>
       <div className="self-center w-full h-auto lg:w-3/5 lg:pr-32">
         <p className="text-2xl mb-6 font-extralight">

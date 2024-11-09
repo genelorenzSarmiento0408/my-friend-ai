@@ -5,6 +5,7 @@ import Label from "./UI/Label";
 import { data } from "@/app/components/Data/Data";
 import Select from "react-select";
 import Button from "./UI/Button";
+import Dialog from "./UI/Dialog";
 
 function Form() {
   const colorStyles = {
@@ -28,8 +29,43 @@ function Form() {
     State: "",
   });
   const [issues, setIssues] = useState(null);
+  const formData = {
+    ...typableForm,
+    ...dropdownForm,
+    issues: issues?.map((issue) => issue.value),
+  };
+  const [error, setError] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+
+      if (result.message === "OK") {
+        setIsOpen(true);
+        setTypableForm({ Name: "", Age: "", Email: "" });
+        setDropdownForm({ Country: "", State: "" });
+        setIssues(null);
+      }
+    } catch (error) {
+      setError("An error occurred. Please try again.");
+    }
+  };
+  console.log(isOpen);
   return (
-    <form className="flex flex-col gap-4">
+    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       {Object.keys(typableForm).map((type) => (
         <div key={type}>
           <Input
@@ -95,7 +131,19 @@ function Form() {
           className="border-main-4 focus:border-accent-blue"
         />
       </div>
+      {error && <p className="text-red-700">{error}</p>}
       <Button className="mt-4">Submit</Button>
+      {isOpen && (
+        <div className="fixed inset-0 z-50 ">
+          <div className="flex items-center justify-center absolute bg-black bg-opacity-50 inset-0">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h2 className="text-xl font-bold mb-4">My Friend AI</h2>
+              <p className="mb-4">Thank You for Waitlisting!</p>
+              <Button onClick={() => setIsOpen(false)}>Close</Button>
+            </div>
+          </div>
+        </div>
+      )}
     </form>
   );
 }
