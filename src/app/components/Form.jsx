@@ -58,6 +58,7 @@ function Form() {
         setTypableForm({ Name: "", Age: "", Email: "" });
         setDropdownForm({ Country: "", State: "" });
         setIssues(null);
+        setError("");
       }
     } catch (error) {
       setError("An error occurred. Please try again.");

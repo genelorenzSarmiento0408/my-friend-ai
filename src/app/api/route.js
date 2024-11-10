@@ -1,8 +1,7 @@
 import { google } from "googleapis";
 import { NextResponse } from "next/server";
 export async function POST(request) {
-  const res = await request.json();
-  console.log(res);
+  const data = await request.json();
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -28,12 +27,12 @@ export async function POST(request) {
       requestBody: {
         values: [
           [
-            res.Name,
-            res.Age,
-            res.Email,
-            res.Country,
-            res.State,
-            res.issues.join(", "),
+            data.Name,
+            data.Age,
+            data.Email,
+            data.Country,
+            data.State,
+            data.issues.join(", "),
           ],
         ],
       },
