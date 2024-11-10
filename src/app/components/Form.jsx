@@ -64,7 +64,7 @@ function Form() {
       setError("An error occurred. Please try again.");
     }
   };
-  console.log(isOpen);
+
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       {Object.keys(typableForm).map((type) => (
