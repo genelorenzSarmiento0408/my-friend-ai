@@ -2,7 +2,7 @@
 import Script from "next/script";
 
 function Gtag() {
-  if (typeof window !== undefined) {
+  if (typeof window !== "undefined") {
     window.dataLayer = window.dataLayer || [];
   }
   function gtag() {
