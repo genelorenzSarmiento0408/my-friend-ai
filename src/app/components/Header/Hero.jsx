@@ -3,7 +3,7 @@ import placeholder from "@/app/assets/Hero_image.png";
 import Image from "next/image";
 function Hero() {
   return (
-    <div className="flex flex-col items-center justify-center pt-12 md:pt-22 lg:gap-4 h-auto px-20">
+    <div className="flex flex-col items-center justify-center px-12 pt-12 md:pt-22 lg:gap-4 h-auto lg:px-20">
       <div></div>
       <h1
         className={`${poppins.className} text-4xl lg:text-8xl italic font-light`}

@@ -21,9 +21,9 @@ function Navbar() {
     <nav
       className={`${
         clicked && width <= 1024
-          ? "grid grid-cols-2 grid-rows-2 fixed bg-white inset w-full h-full z-[9999]"
+          ? "grid grid-cols-2 grid-rows-4 fixed bg-white inset w-full h-full z-[9999]"
           : "flex flex-row"
-      } gap-8 items-center py-6 px-20`}
+      } gap-8 items-center py-6 px-6`}
     >
       <Image
         src={logo}
@@ -65,9 +65,12 @@ function Navbar() {
         <li>
           <Link href={"#goal"}>Goal</Link>
         </li>
-        <li onClick={() => isClicked(false)}>
-          <Link href={"#waitlist"}>
-            <Button className={"flex gap-2"}>
+        <li
+          onClick={() => isClicked(false)}
+          className="block w-full text-center"
+        >
+          <Link href={"#waitlist"} className="text-center">
+            <Button className={"flex justify-center gap-2 w-full"}>
               Join the Waitlist
               <Image src={arrow} alt="arrow" className="self-center" />
             </Button>
