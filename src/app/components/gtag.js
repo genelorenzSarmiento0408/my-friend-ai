@@ -4,13 +4,13 @@ import Script from "next/script";
 function Gtag() {
   if (typeof window !== "undefined") {
     window.dataLayer = window.dataLayer || [];
-  }
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag("config", "G-11T08083EL");
+    gtag("config", "G-11T08083EL");
+  }
   return (
     <Script
       async
