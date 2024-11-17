@@ -6,6 +6,7 @@ import { data } from "@/app/components/Data/Data";
 import Select from "react-select";
 import Button from "./UI/Button";
 import Dialog from "./UI/Dialog";
+import Option from "./UI/Option";
 
 function Form() {
   const colorStyles = {
@@ -128,23 +129,16 @@ function Form() {
           options={data.Issue}
           styles={colorStyles}
           value={issues}
+          closeMenuOnSelect={false}
+          hideSelectedOptions={false}
           onChange={setIssues}
+          components={{ Option }}
           className="border-main-4 focus:border-accent-blue"
         />
       </div>
       {error && <p className="text-red-700">{error}</p>}
       <Button className="mt-4">Submit</Button>
-      {isOpen && (
-        <div className="fixed inset-0 z-50 ">
-          <div className="flex items-center justify-center absolute bg-black bg-opacity-50 inset-0">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h2 className="text-xl font-bold mb-4">My Friend AI</h2>
-              <p className="mb-4">Thank You for Waitlisting!</p>
-              <Button onClick={() => setIsOpen(false)}>Close</Button>
-            </div>
-          </div>
-        </div>
-      )}
+      {isOpen && <Dialog />}
     </form>
   );
 }
