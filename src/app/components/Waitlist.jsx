@@ -9,7 +9,7 @@ function Waitlist() {
         <Image
           src={Waitlist_pic}
           alt="waitlist pic"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover rounded-r-2xl"
         />
       </div>
       <div className="col-span-2 flex flex-col justify-center align-center gap-6 lg:px-10 lg:pt-20">

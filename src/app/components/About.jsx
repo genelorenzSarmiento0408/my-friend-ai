@@ -18,7 +18,7 @@ function About() {
         <Image
           alt="about image"
           src={About_image}
-          className="rounded-3xl lg:rounded-none md:h-full md:object-cover"
+          className="rounded-3xl lg:rounded-l-none md:h-full md:object-cover"
         />
       </div>
       <div className="w-full h-auto py-6 col-span-4 lg:col-span-2 lg:col-end-4 lg:px-6 lg:pr-12 lg:flex lg:flex-col lg:justify-start">

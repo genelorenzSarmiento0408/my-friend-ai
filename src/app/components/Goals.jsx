@@ -11,7 +11,7 @@ function Goals() {
         <Image
           src={Objectives_pic}
           alt="women forming heart gestures during daytime"
-          className="rounded-2xl border-8 border-main-1 md:border-4"
+          className="rounded-2xl"
         />
       </div>
     </section>
