@@ -13,7 +13,7 @@ function Hero() {
       <p className="font-extralight text-4xl text-center mt-2 mb-6">
         The First AI Assistant for Women
       </p>
-      <Image src={placeholder} alt="placeholder" className="rounded-t-2xl " />
+      <Image src={placeholder} alt="placeholder" className="rounded-2xl " />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import placeholder from "@/app/assets/iStock-1995180888.png";
 import icon_explore from "@/app/assets/icon_explore.png";
 function Vision() {
   return (
-    <div className="grid grid-col-3 lg:flex-row mt-8 px-6 lg:px-20 py-14 gap-6 bg-vision bg-no-repeat">
+    <div className="grid lg:flex-row mt-8 px-6 lg:px-20 py-14 gap-6 bg-vision bg-no-repeat">
       <div className="col-span-3 md:col-span-2 md:mt-auto">
         <Image src={icon_explore} alt="an icon" />
         <h1 className="text-3xl font-bold">Our vision</h1>

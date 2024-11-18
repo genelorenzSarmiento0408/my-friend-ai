@@ -6,7 +6,11 @@ function Waitlist() {
   return (
     <div className="grid grid-cols-4 gap-8 w-full" id="waitlist">
       <div className="h-full self-center col-span-2 lg:row-span-4 lg:row-end-4">
-        <Image src={Waitlist_pic} alt="waitlist pic" />
+        <Image
+          src={Waitlist_pic}
+          alt="waitlist pic"
+          className="h-full w-full object-cover"
+        />
       </div>
       <div className="col-span-2 flex flex-col justify-center align-center gap-6 lg:px-10 lg:pt-20">
         <h1
