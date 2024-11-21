@@ -20,7 +20,7 @@ function About() {
         <Image
           alt="about image"
           src={About_image}
-          className="rounded-3xl md:mt-auto md:w-full md:h-full object-cover"
+          className="rounded-3xl lg:mt-auto lg:w-full lg:h-full object-cover"
         />
       </div>
       <div className="w-full h-auto py-6 col-span-4 lg:col-span-2 lg:col-end-5 lg:px-6 lg:pr-12 lg:flex lg:flex-col lg:justify-start">

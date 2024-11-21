@@ -1,7 +1,6 @@
 import Button from "./Button";
-import { useState } from "react";
-function Dialog() {
-  const [open, setIsOpen] = useState(false);
+
+function Dialog({ isOpen, setIsOpen }) {
   return (
     <>
       {open && (

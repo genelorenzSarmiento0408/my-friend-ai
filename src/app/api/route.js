@@ -22,7 +22,7 @@ export async function POST(request) {
 
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: "A1:F1",
+      range: "A1:G1",
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [
@@ -32,6 +32,7 @@ export async function POST(request) {
             data.Email,
             data.Country,
             data.State,
+            data.Gender,
             data.issues.join(", "),
           ],
         ],

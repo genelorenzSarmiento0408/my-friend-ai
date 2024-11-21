@@ -26,6 +26,7 @@ function Form() {
     Email: "",
   });
   const [dropdownForm, setDropdownForm] = useState({
+    Gender: "",
     Country: "",
     State: "",
   });
@@ -117,6 +118,12 @@ function Form() {
                   N/A
                 </option>
               )}
+              {key === "Gender" &&
+                data[key].map(({ value }) => (
+                  <option value={value} key={value}>
+                    {value}
+                  </option>
+                ))}
             </select>
           </div>
         );
@@ -133,12 +140,13 @@ function Form() {
           hideSelectedOptions={false}
           onChange={setIssues}
           components={{ Option }}
+          blurInputOnSelect={false}
           className="border-main-4 focus:border-accent-blue"
         />
       </div>
       {error && <p className="text-red-700">{error}</p>}
       <Button className="mt-4">Submit</Button>
-      {isOpen && <Dialog />}
+      {isOpen && <Dialog setIsOpen={setIsOpen} isOpen={isOpen} />}
     </form>
   );
 }

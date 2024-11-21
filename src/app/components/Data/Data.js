@@ -1,4 +1,5 @@
 const countries = [
+  { name: "United States", code: "US" },
   {
     name: "Afghanistan",
     code: "AF",
@@ -947,10 +948,7 @@ const countries = [
     name: "United Kingdom",
     code: "GB",
   },
-  {
-    name: "United States",
-    code: "US",
-  },
+
   {
     name: "United States Minor Outlying Islands",
     code: "UM",
@@ -1270,8 +1268,15 @@ const issues = [
   { value: "Body Dysmorphia", label: "Body Dysmorphia" },
   { value: "Trauma", label: "Trauma" },
 ];
+
+const gender = [
+  { value: "Male", label: "Male" },
+  { value: "Female", label: "Female" },
+  { value: "Prefer not to say", label: "Prefer not to say" },
+];
 export const data = {
   Country: countries,
   State: states,
+  Gender: gender,
   Issue: issues,
 };
